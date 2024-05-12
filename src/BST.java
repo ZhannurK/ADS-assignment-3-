@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BST<K extends Comparable<K>, V> {
+    private K key;
+    private V value;
     private Node root;
     private int size;
 
@@ -17,11 +19,11 @@ public class BST<K extends Comparable<K>, V> {
     }
 
     public K getKey(){
-        return root.key;
+        return key;
     }
 
     public V getValue(){
-        return root.val;
+        return value;
     }
 
     public BST() {
@@ -35,6 +37,7 @@ public class BST<K extends Comparable<K>, V> {
 
     private Node put(Node node, K key, V value){
         if(node == null){
+            size++;
             return new Node(key, value);
         }
         int cmp = key.compareTo(node.key);
