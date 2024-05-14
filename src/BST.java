@@ -18,14 +18,6 @@ public class BST<K extends Comparable<K>, V> {
         }
     }
 
-    public K getKey(){
-        return key;
-    }
-
-    public V getValue(){
-        return value;
-    }
-
     public BST() {
         root = null;
         size = 0;
@@ -106,19 +98,19 @@ public class BST<K extends Comparable<K>, V> {
         return node;
     }
 
-    public Iterable<K> keys(){
-        List<K> queue = new ArrayList<K>();
-        inorder(root, queue);
-        return queue;
+    public Iterable<Entry<K, V>> keys() {
+        List<Entry<K, V>> entry = new ArrayList<>();
+        inorder(root, entry);
+        return entry;
     }
 
-    private void inorder(Node node, List<K> queue){
-        if(node == null){
+    private void inorder(Node node, List<Entry<K, V>> entry) {
+        if (node == null) {
             return;
         }
-        queue.add(node.key);
-        inorder(node.left, queue);
-        inorder(node.right, queue);
+        inorder(node.left, entry);
+        entry.add(new Entry<>(node.key, node.val));
+        inorder(node.right, entry);
     }
 
     public int size(){
@@ -127,5 +119,23 @@ public class BST<K extends Comparable<K>, V> {
 
     public boolean isEmpty(){
         return size == 0;
+    }
+
+    public static class Entry<K, V> {
+        private K key;
+        private V value;
+
+        public Entry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
     }
 }
