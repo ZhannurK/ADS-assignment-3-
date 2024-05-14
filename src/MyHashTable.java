@@ -92,15 +92,14 @@ public class MyHashTable<K, V> {
     }
 
     public boolean contains(K key) {
-        HashNode<K, V> node = chainArray[hash(key)];
-        while (node != null) {
+        for (HashNode<K, V> node = chainArray[hash(key)]; node != null; node = node.next) {
             if (key.equals(node.key)) {
                 return true;
             }
-            node = node.next;
         }
         return false;
     }
+
 
     public K getKey(V value) {
         if(value == null){
