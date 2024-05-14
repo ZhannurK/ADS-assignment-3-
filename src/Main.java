@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Does 'banana' exist? " + hashTable.contains("banana"));
         System.out.println("Does 'fig' exist? " + hashTable.contains("fig"));
 
-        System.out.println("Removing 'banana'...");
+        System.out.println("After removing 'banana'");
         hashTable.remove("banana");
         System.out.println("Does 'banana' exist after removal? " + hashTable.contains("banana"));
         System.out.println("Value for 'banana' after removal: " + hashTable.get("banana"));
@@ -61,7 +61,7 @@ public class Main {
 
         System.out.println("Does tree contain 'Banana'? " + (tree.get("Banana") != null));
 
-        System.out.println("Deleting 'Banana'...");
+        System.out.println("After removing 'Banana'...");
         tree.delete("Banana");
         System.out.println("Does tree contain 'Banana' after deletion? " + (tree.get("Banana") != null));
 
