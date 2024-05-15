@@ -36,6 +36,6 @@ keys(): Returns an iterable list of all keys in sorted order.<br>
 Inner Classes:<br>
 Node: Represents a node in the binary search tree.<br>
 Entry: Represents a key-value pair.<br>
-Usage<br>
+Usage:
 To utilize these classes, include them in your Java project and ensure proper handling of generics. They are ready for integration into applications requiring hash tables or binary search trees for data storage and manipulation.<br>
 
