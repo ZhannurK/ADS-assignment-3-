@@ -1,3 +1,5 @@
+import static java.lang.Math.abs;
+
 public class MyHashTable<K, V> {
 
     private static class HashNode<K, V> {
@@ -33,7 +35,7 @@ public class MyHashTable<K, V> {
     }
 
     private int hash(K key){
-        return (key.hashCode() & 0x7fffffff) % M;
+        return abs(key.hashCode()) % M;
     }
 
     public void put(K key, V value) {
