@@ -4,11 +4,11 @@ import java.util.List;
 public class BST<K extends Comparable<K>, V> {
     private K key;
     private V value;
-    private Node root;
-    private int size;
+    private Node root = null;
+    private int size = 0;
 
     private class Node {
-        private K key;
+        private final K key;
         private V val;
         private Node left, right;
 
@@ -16,11 +16,6 @@ public class BST<K extends Comparable<K>, V> {
             this.key = key;
             this.val = val;
         }
-    }
-
-    public BST() {
-        root = null;
-        size = 0;
     }
 
     public void put(K key, V value){
@@ -122,8 +117,8 @@ public class BST<K extends Comparable<K>, V> {
     }
 
     public static class Entry<K, V> {
-        private K key;
-        private V value;
+        private final K key;
+        private final V value;
 
         public Entry(K key, V value) {
             this.key = key;
